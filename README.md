@@ -21,11 +21,11 @@ La première partie du développement se concentre sur le service QuickBuy, en c
 
 Pour la partie Back-Office, la boutique la Poste fonctionne sur Hybris, une plateforme/base de données orientée e-commerce. L'objectif est de développer dans un premier temps une page d'administration du module Quickbuy pour permettre aux webmasters de créer ou modifier des produits mis en vente dans le service.
 
-Pour cela, on utilisera des fichiers ImpEx pour générer des jsp dans l'interface d'administration.
+Pour cela, on utilisera des fichiers ImpEx ainsi qu'un court code HTML pour afficher l'interface d'administration.
 
 
 ![Impex](https://github.com/Balbri/MtelPres/blob/master/img/Impex_admin_page.PNG)
-![Html administration Hybris](img)
+![Html administration Hybris](https://github.com/Balbri/MtelPres/blob/master/img/Html_hybris.PNG)
 
 Désormais, le webmaster peut créer ou modifier les services via l'interface Hybris.
 
