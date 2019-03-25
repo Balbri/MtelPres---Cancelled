@@ -32,8 +32,16 @@ Désormais, le webmaster peut créer ou modifier les services via l'interface Hy
 [Images de l'interface Hybris et de la gestion des tuiles]
 
 
-# Environnement de travail: Les contrôleurs:
+# Environnement de travail: Les contrôleurs (langage JAVA et XML):
 
 La première étape est d'afficher les trois produits en format json. Pour celà, il faut écrire un contrôleur qui va effectuer un mapping des trois objets présents dans la base et permettre leur récupération au format JSON.
+
+Pour cela, d'un côté la construction des objets (initialement au format MODEL) se fera via des fichiers XML. 
+
+
+Le contrôleur, pour sa part, est en JAVA.
+
+
+
 
 
