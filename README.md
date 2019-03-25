@@ -24,6 +24,8 @@ Pour la partie Back-Office, la boutique la Poste fonctionne sur Hybris, une plat
 Pour cela, on utilisera des fichiers ImpEx pour générer des jsp dans l'interface d'administration.
 
 
+![Impex](https://github.com/Balbri/MtelPres/img/Impex_admin_page.png)
+
 
 
 
