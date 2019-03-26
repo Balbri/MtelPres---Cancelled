@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  ~ [y] hybris Platform
+  ~
+  ~ Copyright (c) 2000-2016 hybris AG
+  ~ All rights reserved.
+  ~
+  ~ This software is the confidential and proprietary information of hybris
+  ~ ("Confidential Information"). You shall not disclose such Confidential
+  ~ Information and shall use it only in accordance with the terms of the
+  ~ license agreement you entered into with hybris.
+  -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<enum class="com.laposte.eboutique.eboutiquecommercewebservices.populator.options.PaymentInfoOption">
+		<value>BASIC</value>
+		<value>BILLING_ADDRESS</value>
+	</enum>
+	<enum class="de.hybris.platform.commercewebservicescommons.dto.reex.OptinTypeWsDTO">
+		<value>dhATort</value>
+		<value>dhDecedee</value>
+		<value>dhEnfantMineur</value>
+		<value>dhMajeurSousTut</value>
+		<value>dhEnfantParentsDivorces</value>
+		<value>dhDemenagementEntreprise</value>
+	</enum>
+
+	<enum class="com.laposte.eboutique.eboutiquecommercewebservices.dto.proxiservices.ScheduleType">
+		<value>CLIENT_SCHEDULE</value>
+		<value>PARTNER_SCHEDULE</value>
+		<value>PEER_SCHEDULE</value>
+	</enum>
+
+	<enum class="de.hybris.platform.commercewebservicescommons.dto.configurateur.ConfigurateurProductEnum">
+		<value>TIMBRE_MARIANNE_LETTRE_VERTE</value>
+		<value>TIMBRE_MARIANNE_LETTRE_PRIORITAIRE</value>
+		<value>TIMBRE_MARIANNE_ECOPLI</value>
+		<value>TIMBRE_MARIANNE_LETTRE_SUIVIE</value>
+		<value>TIMBRE_MARIANNE_EUROPE</value>
+		<value>TIMBRE_MARIANNE_MONDE</value>
+		<value>BEAU_TIMBRE_LETTRE_VERTE</value>
+		<value>BEAU_TIMBRE_LETTRE_PRIORITAIRE</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_VERTE</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_VERTE_STICKER_SUIVI</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_PRIORITAIRE</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_PRIORITAIRE_STICKER_SUIVI</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_SUIVIE</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_RECOMMANDEE</value>
+		<value>MON_TIMBRE_EN_LIGNE_ECOPLI</value>
+		<value>MON_TIMBRE_EN_LIGNE_ECOPLI_STICKER_SUIVI</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_PRIORITAIRE_INTERNATIONALE</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_SUIVIE_INTERNATIONALE</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_PRIORITAIRE_INTERNATIONALE_AVEC_SUIVIE</value>
+		<value>MON_TIMBRE_EN_LIGNE_LETTRE_RECOMMANDEE_INTERNATIONALE</value>
+		<value>MON_TIMBRE_EN_LIGNE_PETIT_PAQUET_PRIORITAIRE_INTERNATIONAL</value>
+		<value>MON_TIMBRE_EN_LIGNE_PETIT_PAQUET_PRIORITAIRE_INTERNATIONAL_AVEC_SUIVI</value>
+		<value>MON_TIMBRE_EN_LIGNE_PETIT_PAQUET_INTERNATIONAL_RECOMMANDE</value>
+		<value>MON_TIMBRE_A_MOI_LETTRE_VERTE</value>
+		<value>MON_TIMBRE_A_MOI_LETTRE_PRIORITAIRE</value>
+		<value>ID_TIMBRE_LETTRE_VERTE</value>
+		<value>ID_TIMBRE_LETTRE_PRIORITAIRE</value>
+		<value>LETTRE_EN_LIGNE</value>
+		<value>LETTRE_RECOMMANDEE_EN_LIGNE</value>
+		<value>VIGNETTE_RECOMMANDEE_EN_LIGNE</value>
+		<value>PRET_A_POSTER_LETTRE_SUIVIE</value>
+		<value>PRET_A_POSTER_LETTRE_VERTE</value>
+		<value>PRET_A_POSTER_LETTRE_PRIORITAIRE</value>
+		<value>PRET_A_POSTER_LETTRE_RECOMMANDEE_MOBILE</value>
+		<value>PRET_A_EXPEDIER_CHRONO</value>
+		<value>PRET_A_ENVOYER_COLISSIMO</value>
+		<value>COLISSIMO_EN_LIGNE</value>
+		<value>CHRONO_RELAIS_13</value>
+		<value>CHRONO_RELAIS_EUROPE</value>
+		<value>CHRONO_RELAIS_DOM</value>
+		<value>CHRONO_13</value>
+		<value>CHRONO_10</value>
+		<value>CHRONO_EXPRESS</value>
+		<value>CHRONO_CLASSIC_UE</value>
+	</enum>
+
+	<enum class="de.hybris.platform.commercewebservicescommons.dto.configurateur.ConfigurateurGlobalProductTypeEnum">
+		<value>Produit_Physique</value>
+		<value>MTEL</value>
+		<value>MTAM</value>
+		<value>ID_TIMBRE</value>
+		<value>LEL</value>
+		<value>LREL</value>
+		<value>VREL</value>
+		<value>COLISSIMO</value>
+		<value>CHRONO</value>
+	</enum>
+
+
+	<enum class="com.laposte.eboutique.eboutiquecommercewebservices.dto.vrel.VrelStatusTypeEnum">
+		<value>AVAILABLE</value>
+		<value>EXPIRED</value>
+		<value>REIMBURSED</value>
+		<value>USED</value>
+	</enum>
+	<enum class="com.laposte.eboutique.eboutiquecommercewebservices.dto.vrel.VrelAddressTitleWsDTOTypeEnum">
+		<value>Mr</value>
+		<value>Mrs</value>
+		<value>Miss</value>
+	</enum>
+	<enum class="com.laposte.eboutique.eboutiquecommercewebservices.dto.vrel.VrelAddressTypeEnum">
+		<value>PART</value>
+		<value>PRO</value>
+	</enum>
+	<enum class="com.laposte.eboutique.eboutiquecommercewebservices.dto.vrel.VrelChoixDepotInitialEnum">
+		<value>BOITE_LETTRE</value>
+		<value>BUREAU_POSTE</value>
+	</enum>
+
+	<!--auth response  -->
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.auth.data.LogoutResponse">
+		<property name="success" type="boolean"/>
+	</bean>
+
+	<!-- storesession data -->
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.storesession.data.LanguageDataList">
+		<property name="languages"
+		          type="java.util.Collection&lt;de.hybris.platform.commercefacades.storesession.data.LanguageData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.storesession.data.CurrencyDataList">
+		<property name="currencies"
+		          type="java.util.Collection&lt;de.hybris.platform.commercefacades.storesession.data.CurrencyData>"/>
+	</bean>
+
+	<!-- order data -->
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.order.data.CartDataList">
+		<property name="carts"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.order.data.CartData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.order.data.OrderEntryDataList">
+		<property name="orderEntries"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.order.data.OrderEntryData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.order.data.CardTypeDataList">
+		<property name="cardTypes"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.order.data.CardTypeData>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.order.data.CartModificationDataList">
+		<property name="cartModificationList"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.order.data.CartModificationData>"/>
+	</bean>
+
+	<!-- product data -->
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.product.data.ProductDataList">
+		<property name="products"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ProductData>"/>
+		<property name="catalog" type="String"/>
+		<property name="version" type="String"/>
+		<property name="totalProductCount" type="int"/>
+		<property name="totalPageCount" type="int"/>
+		<property name="currentPage" type="int"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.product.data.PromotionDataList">
+		<property name="promotions"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.PromotionData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.product.data.PromotionResultDataList">
+		<property name="promotions"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.PromotionResultData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.product.data.ReviewDataList">
+		<property name="reviews" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ReviewData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.product.data.SuggestionDataList">
+		<property name="suggestions"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.SuggestionData>"/>
+	</bean>
+
+	<!-- user data -->
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.user.data.TitleDataList">
+		<property name="titles" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.TitleData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.user.data.CountryDataList">
+		<property name="countries" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.CountryData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.user.data.AddressDataList">
+		<property name="addresses" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.AddressData>"/>
+	</bean>
+
+	<!-- voucher data -->
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.voucher.data.VoucherDataList">
+		<property name="vouchers"
+		          type="java.util.List&lt;de.hybris.platform.commercefacades.voucher.data.VoucherData>"/>
+	</bean>
+
+	<!-- validation data -->
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.validation.data.AddressValidationData">
+		<property name="errors" type="de.hybris.platform.webservicescommons.dto.error.ErrorListWsDTO"/>
+		<property name="decision" type="String"/>
+		<property name="suggestedAddressesList"
+		          type="com.laposte.eboutique.eboutiquecommercewebservices.user.data.AddressDataList"/>
+	</bean>
+
+	<!-- Additional title property for CustomerData -->
+	<bean class="de.hybris.platform.commercefacades.user.data.CustomerData"
+	      extends="de.hybris.platform.commercefacades.user.data.PrincipalData">
+		<property name="title" type="String"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.user.data.LoginChangeResponse">
+		<property name="success" type="boolean"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.user.data.PasswordRestoreResponse">
+		<property name="success" type="boolean"/>
+	</bean>
+
+	<!-- update queues -->
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.queues.data.ProductExpressUpdateElementData">
+		<property name="code" type="String"/>
+		<property name="catalogId" type="String"/>
+		<property name="catalogVersion" type="String"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.queues.data.ProductExpressUpdateElementDataList">
+		<property name="productExpressUpdateElements"
+		          type="java.util.List&lt;com.laposte.eboutique.eboutiquecommercewebservices.queues.data.ProductExpressUpdateElementData>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.queues.data.OrderStatusUpdateElementData">
+		<property name="code" type="String"/>
+		<property name="status" type="String"/>
+		<property name="baseSiteId" type="String"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.queues.data.OrderStatusUpdateElementDataList">
+		<property name="orderStatusUpdateElements"
+		          type="java.util.List&lt;com.laposte.eboutique.eboutiquecommercewebservices.queues.data.OrderStatusUpdateElementData>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.phila.StatusPhilaWsDTO">
+		<property name="code" type="String"/>
+		<property name="displayName" type="String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.AbstractOrderWsDTO">
+		<property name="paymentChoicesForm" type="String"/>
+		<property name="paymentMode" type="String"/>
+		<property name="paymentAddress" type="de.hybris.platform.commercewebservicescommons.dto.user.AddressWsDTO"/>
+		<property name="totalNetPrice" type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO"/>
+		<property name="paymentCreditConfirmation" type="java.util.Map&lt;String,String>"/>
+		<property name="statusPhila" type="de.hybris.platform.commercewebservicescommons.dto.phila.StatusPhilaWsDTO"/>
+		<property name="paymentCPPConfirmation" type="java.util.Map&lt;java.lang.String,java.lang.String>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.CartWsDTO">
+		<property name="remainingPriceForFreeShipment" type="java.lang.Double"/>
+		<property name="thresholdForFreeShipment" type="java.lang.Double"/>
+		<property name="estimateShipmentDateLabel" type="java.lang.String"/>
+		<property name="hasOnlyEservice"  type="java.lang.Boolean"/>
+		<property name="statusPhila" type="de.hybris.platform.commercewebservicescommons.dto.phila.StatusPhilaWsDTO"/>
+	</bean>
+
+	
+	
+	<bean class="de.hybris.platform.commercefacades.goal.data.PriceData">
+		<property name="amount" type="java.lang.Double" />
+		<property name="currency" type="java.lang.String" />
+	</bean>	
+	
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.goal.InputGoalContractWsDTO">
+		<property name="id" type="java.lang.String"/>
+		<property name="subscriptionEmail" type="java.lang.String"/>
+		<property name="subscriptionTitle" type="java.lang.String"/>
+		<property name="subscriptionFirstName" type="java.lang.String"/>
+		<property name="subscriptionLastName" type="java.lang.String"/>
+		<property name="creationTime" type="java.util.Date"/>
+		<property name="purchaseAmount" type="de.hybris.platform.commercefacades.goal.data.PriceData"/>
+		<property name="status" type="java.lang.String"/>	
+		<property name="startDate" type="java.util.Date"/>
+		<property name="endDate" type="java.util.Date"/>
+	</bean>
+	
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.user.AddressWsDTO">
+		<property name="appartment" type="java.lang.String"/>
+		<property name="building" type="java.lang.String"/>
+		<property name="pobox" type="java.lang.String"/>
+		<property name="pro" type="java.lang.Boolean"/>
+		<property name="streetNumber" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.wishlist.ProductWishListResultWsDTO">
+		<description>POJO containing the wish list of the client.</description>
+		<property name="products"  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.product.ProductWsDTO>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.wishlist.ProductInWishListWsDTO">
+		<description>POJO containing the test of product in wishlist.</description>
+		<property name="isInWishList"  type="java.lang.Boolean"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.product.ProductWsDTO">
+		<property name="netPrice" type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO" />
+		<property name="displayedInHomePage" type="java.lang.Boolean" />
+		<property name="argument" type="java.lang.String" />
+		<property name="assurance" type="java.lang.Boolean" />
+		<property name="auteur" type="java.lang.String" />
+		<property name="avantVente" type="java.lang.Boolean" />
+		<property name="bulle" type="java.lang.Boolean" />
+		<property name="canal" type="java.lang.Boolean" />
+		<property name="commandable" type="java.lang.Boolean" />
+		<property name="commercialisable" type="java.lang.Boolean" />
+		<property name="accuseReception" type="java.lang.Boolean" />
+		<property name="dateAppro" type="java.util.Date" />
+		<property name="dateDerniereAppro" type="java.util.Date" />
+		<property name="dateEmissionLegale" type="java.util.Date" />
+		<property name="dateDebutCommercialisation" type="java.util.Date" />
+		<property name="dateFinCommercialisation" type="java.util.Date" />
+		<property name="destinationEnvoi" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="destinationEnvoi2" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="fenetre" type="java.lang.Boolean" />
+		<property name="formatVignette" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="idtPersoType" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="marchandiseCourrier" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="masse" type="java.lang.Integer" />
+		<property name="mentionsLegales" type="java.lang.String" />
+		<property name="nbTimbreParPresentation" type="java.lang.Integer" />
+		<property name="nbTPparFeuille" type="java.lang.Integer" />
+		<property name="normeEnvDurable"  type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="numerosuivi" type="java.lang.Boolean" />
+		<property name="packaging" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="paysEmetteur" type="de.hybris.platform.commercefacades.user.data.CountryData" />
+		<property name="poidsMinEnvoi1" type="java.lang.Integer" />
+		<property name="poidsMaxEnvoi" type="java.lang.Integer" />
+		<property name="productRegions" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ParametrageData>"/>
+		<property name="securite" type="java.lang.Boolean" />
+		<property name="seuilMaxCommandable" type="java.lang.Integer" />
+		<property name="seuilAlerte" type="java.lang.Integer" />
+		<property name="seuilSecurite" type="java.lang.Integer" />
+		<property name="techniqueImpression" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="texteAvantage" type="java.lang.String" />
+		<property name="typeCollage" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="typeEnveloppe" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="typeRecommande" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="typeProduit"  type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="delaiEnvoi"	  type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="typeSecurite" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="valeurFaciale" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="valeurPermanente" type="java.lang.Boolean" />
+		<property name="zoneValidite" type="java.lang.String" />
+		<property name="famille" type="de.hybris.platform.commercefacades.product.data.ParametrageData" />
+		<property name="thematiques" type="java.util.List&lt;de.hybris.platform.commercefacades.product.data.ParametrageData>" />
+		<property name="modulo" type="boolean" />
+		<!-- MSYLLA -->
+		<property name="formatAvecDents" type="java.lang.String" />
+		<property name="datemiseAJourArticle" type="java.util.Date" />
+		<property name="degressivite" type="java.lang.Boolean" />
+		<property name="intituleTechnique" type="java.lang.String" />
+		<property name="descriptionSynthetique" type="java.lang.String" />
+		<property name="codeCabestan" type="java.lang.String" />
+		<property name="taxClass" type="java.lang.String" />
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercefacades.order.data.AbstractOrderData">
+		<property name="invoiceID" type="java.lang.String" />
+		<property name="paymentAddress" type="de.hybris.platform.commercefacades.user.data.AddressData" />
+		<property name="paymentMode" type="java.lang.String" />
+		<property name="paymentCustomData" type="java.lang.String" />
+		<property name="statusPhila" type="de.hybris.platform.commercefacades.phila.data.StatusPhilaData"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquefacades.configurator.data.ConfiguratorPriceData">
+		<property name="amountTVA" type="java.lang.Double" />
+		<property name="amountTotalHT" type="java.lang.Double" />
+		<property name="amountTotalTTC" type="java.lang.Double" />
+		<property name="neededQty" type="java.lang.Integer" />
+		<property name="url" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.OrderWsDTO">
+		<property name="invoiceID" type="java.lang.String"/>
+		<property name="paymentCustomData" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.order.InvoicesWsDTO">
+		<property name="invoices"
+				  type="java.util.List&lt;com.laposte.eboutique.eboutiquecommercewebservices.dto.order.InvoiceWsDTO>"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.order.InvoiceWsDTO">
+		<property name="orderCode" type="java.lang.String"/>
+		<property name="invoiceURL" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.product.ProductStockAlertDTO">
+		<property name="email" type="java.lang.String"/>
+		<property name="firstName" type="java.lang.String"/>
+		<property name="lastName" type="java.lang.String"/>
+		<property name="alertType" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.PaymentModeWsDTO">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+		<property name="description" type="String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.PaymentModeListWsDTO">
+		<property name="paymentModes"
+				  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.order.PaymentModeWsDTO>"/>
+	</bean>
+
+	<!-- Begin Proxi-Services -->
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.proxiservices.FinishServiceWsDTO">
+		<property name="completionDate" type="String" />
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.proxiservices.ScheduleWsDTO">
+		<property name="scheduleId" type="String" />
+		<property name="scheduleType" type="com.laposte.eboutique.eboutiquecommercewebservices.dto.proxiservices.ScheduleType" />
+		<property name="startDate" type="String" />
+		<property name="endDate" type="String" />
+		<property name="providerId" type="String" />
+		<property name="providerName" type="String" />
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.proxiservices.PropositionWsDTO">
+		<property name="propositionDate" type="String" />
+		<property name="propositionId" type="String" />
+		<property name="schedules" type="java.util.List&lt;com.laposte.eboutique.eboutiquecommercewebservices.dto.proxiservices.ScheduleWsDTO>" />
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.proxiservices.CancelServiceWsDTO">
+		<property name="cancellationDate" type="String" />
+		<property name="reasonCode" type="String" />
+		<property name="reasonComment" type="String" />
+	</bean>
+
+	<!-- End Proxi-Services -->
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.reex.OptinWsDto">
+		<property name="id" type="de.hybris.platform.commercewebservicescommons.dto.reex.OptinTypeWsDTO" />
+		<property name="label" type="java.lang.String" />
+		<property name="value" type="java.lang.Boolean" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.reex.ReexInitWsDto">
+		<property name="apiVersion" type="java.lang.Double" />
+		<property name="countries" type="java.util.List&lt;de.hybris.platform.commercefacades.user.data.CountryData>"/>
+		<property name="dayTimeThreshold" type="java.lang.String" />
+		<property name="treatmentDays" type="java.lang.String" />
+		<property name="dhOptins" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.reex.OptinWsDto>" />
+		<property name="holidays" type="java.util.List&lt;java.lang.String>" />
+		<property name="price6months" type="java.lang.Double" />
+		<property name="price12months" type="java.lang.Double" />
+		<property name="priceTemp1month" type="java.lang.Double" />
+		<property name="priceTemp6months" type="java.lang.Double" />
+		<property name="priceTemp12months" type="java.lang.Double" />
+		<property name="nextValidDate" type="java.lang.String"></property>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.reex.ReexPriceDto">
+		<property name="price" type="java.lang.Double" />
+		<property name="contractDuration" type="java.lang.Integer" />
+		<property name="contractDurationDays" type="java.lang.Integer" />
+		<property name="contratType" type="java.lang.String" />
+		<property name="nextValidDate" type="java.lang.String" />
+
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.reex.ReexAddressWsDto">
+		<property name="country" type="de.hybris.platform.commercewebservicescommons.dto.user.CountryWsDTO"/>
+		<property name="adresseL2" type="java.lang.String"></property>
+		<property name="adresseL3" type="java.lang.String"></property>
+		<property name="adresseL4" type="java.lang.String"></property>
+		<property name="adresseL4ExtVoie" type="java.lang.String"></property>
+		<property name="adresseL4LibVoie" type="java.lang.String"></property>
+		<property name="adresseL4MotVoie" type="java.lang.String"></property>
+		<property name="adresseL4NumVoie" type="java.lang.Integer"></property>
+		<property name="adresseL4TypeVoie" type="java.lang.String"></property>
+		<property name="adresseL5" type="java.lang.String"></property>
+		<property name="adresseL6CP" type="java.lang.String"></property>
+		<property name="adresseL6CodeLocalite" type="java.lang.String"></property>
+		<property name="adresseL6Localite" type="java.lang.String"></property>
+		<property name="ancienQL" type="java.lang.String"></property>
+		<property name="ceaL4" type="java.lang.String"></property>
+		<property name="numeroTelephone" type="java.lang.String"></property>
+		<property name="ql" type="java.lang.String"></property>
+		<property name="adresseType" type="java.lang.String" />
+		<property name="verifMascadia" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.reex.PersonWsDto">
+		<property name="id" type="java.lang.String" />
+		<property name="title" type="java.lang.String" />
+		<property name="firstName" type="java.lang.String" />
+		<property name="middleName" type="java.lang.String" />
+		<property name="lastName" type="java.lang.String" />
+		<property name="fullName" type="java.lang.String" />
+	</bean>
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.OrderEntryWsDTO">
+		<property name="options" type="de.hybris.platform.commercewebservicescommons.dto.order.OrderEntryOptionsWsDto"></property>
+		<property name="statusPhila" type="de.hybris.platform.commercewebservicescommons.dto.phila.StatusPhilaWsDTO"/>
+		
+		<!-- Informations colissimo en ligne -->		
+		<property name="id" type="java.lang.String" />
+		<property name="productType" type="com.laposte.eboutique.facades.order.convertors.ProductTypeEnum" />
+		<property name="codeUniqueColis" type="java.lang.String" />
+		<!-- Informations colissimo en ligne -->
+		<property name="baseNetPrice" type="String" />
+		<property name="totalNetPrice" type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO" />
+
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.OrderEntryOptionsWsDto">
+		<property name="reexContract" type="de.hybris.platform.commercewebservicescommons.dto.reex.ReexContractWsDto" /> 
+		<property name="mcamCreationData" type="de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMCreationWsDTO" />
+		<property name="mtamCreationData" type="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMCreationWsDTO" />
+		<property name="mcamPackCreationData" type="de.hybris.platform.commercewebservicescommons.dto.mcam.PuemPackCreationWsDTO" />
+		<property name="colissimoColisData" type="de.hybris.platform.commercewebservicescommons.dto.colissimo.ColissimoColisWsDTO" />
+	</bean>
+	
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.colissimo.ColissimoColisWsDTO" >
+		<property name="expediteurAddress" 			type="de.hybris.platform.commercewebservicescommons.dto.user.AddressWsDTO" />
+		<property name="deliveryAddress" 			type="de.hybris.platform.commercewebservicescommons.dto.user.AddressWsDTO" />
+		<property name="toIsoCode" 					type="java.lang.String" />
+		<property name="fromIsoCode" 				type="java.lang.String" />
+		<property name="formalitesDouaniere" 		type="de.hybris.platform.commercewebservicescommons.dto.order.FormaliteDouaniereWsDTO" />
+		<property name="colisRegime" 				type="com.laposte.eboutique.core.enums.RegimeColisEnum" />
+		<property name="typeColis"   				type="com.laposte.eboutique.core.enums.TypeColisEnum"/>
+		<property name="modeDepot" 	   				type="com.laposte.eboutique.core.enums.ChoixDepotEnum" />
+		<property name="modeLivraison" 				type="com.laposte.eboutique.core.enums.ChoixLivraisonEnum" />
+		<property name="modeRetour" 				type="com.laposte.eboutique.core.enums.TypeRetourColisEnum" />
+		<property name="avecAssurance" 				type="java.lang.Boolean" />
+		<property name="dateDepot" 					type="java.util.Date" />
+		<property name="suiviEmail" 				type="java.util.List&lt;com.laposte.eboutique.core.enums.SuiviEmailEnum>" />
+	    <property name="emailDestinataire" 			type="java.lang.String" />
+		<property name="refColis" 					type="java.lang.String" />
+		<property name="poidsColis" 				type="java.lang.Double" />
+		<property name="indemnitePlus" 				type="java.lang.Boolean" />
+		<property name="labelAssuranceColis" 		type="java.lang.String" />
+		<property name="totalNetPriceAssurance" 	type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO" />
+		<property name="recommendationLevel" 		type="java.lang.String" />
+		<property name="totalNetPriceSurcout" 		type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO" />
+		<property name="insuredValue" 				type="java.lang.Double" />
+		<property name="totalNetPriceColis" 		type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO" />
+		<property name="nameColisFavoris" 			type="java.lang.String" />
+		<property name="originalId" 				type="java.lang.String" />
+		<property name="id" 						type="java.lang.String" />
+		<property name="pkColisFavoris" 			type="java.lang.String" />
+	</bean>
+
+	<bean
+		class="de.hybris.platform.commercewebservicescommons.dto.order.FormaliteDouaniereWsDTO">
+		<property name="natureEnvoi" type="de.hybris.platform.commercewebservicescommons.dto.NatureEnvoiWsDTO" />
+		<property name="code" type="java.lang.String" />
+		<property name="contenusColis" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.order.ContenuColisWsDTO>" />
+		<property name="returnReason" type="java.lang.String" />
+	</bean>
+	
+	<bean
+		class="de.hybris.platform.commercewebservicescommons.dto.order.ContenuColisWsDTO">
+		<property name="descriptionArticle" type="java.lang.String" />
+		<property name="poidsNet" type="java.lang.Double" />
+		<property name="quantite" type="java.lang.Integer" />
+		<property name="valeurUnitaire" type="java.lang.Double" />
+		<property name="paysOrigine" type="de.hybris.platform.commercewebservicescommons.dto.user.CountryWsDTO" />
+		<property name="numeroTarifaire" type="java.lang.String" />
+	</bean>
+
+
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.colissimo.ColissimoColisListWsDTO" >
+		<property name="listColissimo" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.colissimo.ColissimoColisWsDTO>" />
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.reex.ReexContractWsDto">
+		<property name="id" type="java.lang.String" />
+		<property name="number" type="java.lang.String" />
+		<property name="activationTime" type="java.lang.String" />
+		<property name="allPersons" type="java.lang.Boolean" />
+		<property name="alreadyLeftOldAddress" type="java.lang.Boolean" />
+		<property name="contacts" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.reex.PersonWsDto>" />
+		<property name="deadPerson" type="java.lang.Boolean" />
+		<property name="ayantDroitNom" type="java.lang.String" />
+		<property name="ayantDroitPrenom" type="java.lang.String" />
+		<property name="dhCivilite" type="java.lang.String" />
+		<property name="dhName" type="java.lang.String" />
+		<property name="dhOptins" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.reex.OptinWsDto>" />
+		<property name="duration" type="java.lang.Integer" />
+		<property name="newAddress" type="de.hybris.platform.commercewebservicescommons.dto.reex.ReexAddressWsDto" />
+		<property name="oldAddress" type="de.hybris.platform.commercewebservicescommons.dto.reex.ReexAddressWsDto" />
+		<property name="renewed" type="java.lang.Boolean" />
+		<property name="canBeRenewed" type="java.lang.Boolean" />
+		<property name="bdpActivation" type="java.lang.Boolean" />
+		<property name="onlineActivation" type="java.lang.Boolean" />
+		<property name="startDate" type="java.lang.String" />
+		<property name="endDate" type="java.lang.String" />
+		<property name="status" type="java.lang.String" />
+		<property name="typeParcours" type="java.lang.Integer" />
+		<property name="useAddresses" type="java.lang.Boolean" />
+		<property name="contractType" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.reex.ReexContractListWsDto">
+		<property name="contracts" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.reex.ReexContractWsDto>"></property>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.OrderHistoryEntryWsDTO">
+		<property name="id" type="java.lang.String" />
+		<property name="codeUniqueColis" type="java.lang.String" />
+		<property name="productType" type="com.laposte.eboutique.facades.order.convertors.ProductTypeEnum" />	
+				
+		<property name="entryNumber" type="Integer"/>
+		<property name="quantity" type="Long"/>
+		<property name="basePrice" type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO"/>
+		<property name="totalPrice" type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO"/>
+		<property name="product" type="de.hybris.platform.commercewebservicescommons.dto.product.ProductWsDTO"/>
+		<property name="options" type="de.hybris.platform.commercewebservicescommons.dto.order.OrderEntryOptionsWsDto"/>
+		<property name="statusPhila" type="de.hybris.platform.commercewebservicescommons.dto.phila.StatusPhilaWsDTO"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.OrderHistoryWsDTO">
+		<property name="entries" type="java.util.Collection&lt;de.hybris.platform.commercewebservicescommons.dto.order.OrderHistoryEntryWsDTO>" />
+		<property name="statusPhila" type="de.hybris.platform.commercewebservicescommons.dto.phila.StatusPhilaWsDTO"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.pemo.ParrainageWsDTO">
+		<property name="parrainEmail" type="java.lang.String" />
+		<property name="parrainFirstName" type="java.lang.String" />
+		<property name="parrainLastName" type="java.lang.String" />
+		<property name="filleulLastName" type="java.lang.String" />
+		<property name="filleulFirstName" type="java.lang.String" />
+		<property name="codePromo" type="java.lang.String" />
+		<property name="validityDate" type="java.util.Date" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.pemo.ParrainageCodeWsDTO">
+		<property name="code" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.pemo.PemoUserInfoWsDTO">
+		<property name="codeParrainage" type="java.lang.String" />
+		<property name="infoCreditAvailable" type="de.hybris.platform.commercewebservicescommons.dto.app.PUEMCreditsAvailableResponseWsDTO" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMInitWsDTO">
+		<property name="quantiteMax" type="java.lang.Integer"/>
+		<property name="destinations" type="java.util.List&lt;java.lang.MCAMDestinationsWsDTO>"/>
+		<property name="grilleTarifaire" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMGrilleTarifaireWsDto>"/>
+		<property name="countries" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mcam.PuemCountryWsDto>" />
+		<property name="enveloppeType" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mcam.EnveloppeTypeWsDto>" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.EnveloppeTypeWsDto">
+		<property name="codeTypeEnveloppe" type="java.lang.String"/>
+		<property name="idTypeEnveloppe" type="java.lang.String"/>
+		<property name="labelTypeEnveloppe" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.PuemCountryWsDto">
+		<property name="codeIso" type="java.lang.String"/>
+		<property name="name" type="java.lang.String"/>
+		<property name="zone" type="java.lang.String"/>
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMDestinationsWsDTO">
+		<property name="codeDestination" type="java.lang.String"/>
+		<property name="shortLabel" type="java.lang.String"/>
+		<property name="longLabel" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMPriceWsDTO">
+		<property name="destinations" type="java.util.List&lt;java.lang.String>"/>
+		<property name="price" type="java.lang.float"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMInitWsDto">
+        <property name="formatsPlanches" type="java.util.Map&lt;java.lang.String,java.lang.String>" />
+        <property name="natures" type="java.util.Map&lt;java.lang.String,java.lang.String>" />
+        <property name="poids" type="java.util.Map&lt;java.lang.String,java.lang.String>" />
+		<property name="mtamOrientationSpecific" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMOrientationWsDto>" />
+		<property name="destinations" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMInitDestinationsWsDto>" />
+		<property name="quantiteMax" type="java.lang.Integer" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMInitDestinationsWsDto">
+		<property name="codeDestination" type="java.lang.String" />
+		<property name="shortLabel" type="java.lang.String" />
+		<property name="longLabel" type="java.lang.String" />
+		<property name="naturesDes" type="java.util.List&lt;java.lang.String>" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMGrilleTarifaireWsDto">
+		<property name="code" type="java.lang.String"/>
+		<property name="destination" type="java.lang.String"/>
+		<property name="quantity" type="java.lang.Integer"/>
+		<property name="price" type="java.lang.Double"/>
+		<property name="label" type="java.lang.String"/>
+		<property name="validite" type="java.lang.Integer"/>
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMOrientationWsDto">
+		<property name="orientation" type="java.lang.String" />
+		<property name="formatPlanche" type="java.lang.String" />
+		<property name="lignes" type="java.lang.Integer" />
+		<property name="columns" type="java.lang.Integer" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMProductDto">
+		<property name="nature" type="java.lang.String"/>
+		<property name="poids" type="java.lang.String" />
+		<property name="mtamOrientationSpecific" type="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMOrientationWsDto" />
+		<property name="destination" type="java.lang.String" />
+		<property name="image" type="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMImage" />
+		<property name="quantite" type="java.lang.Long" />
+		<property name="coutPerso" type="java.lang.Double"/>
+		<property name="coutAffranch" type="java.lang.Double"/>
+		<property name="nomPlanche" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMImage">
+		<property name="width" type="java.lang.Double"/>
+		<property name="height" type="java.lang.Double" />
+		<property name="name" type="java.lang.String" />
+		<property name="b64" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMPriceWsDto">
+		<property name="prixPlanche" type="java.lang.Double"/>
+		<property name="prixPerso" type="java.lang.Double"/>
+		<property name="prixTotal" type="java.lang.Double"/>
+		<property name="grilleTarifsPerso" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMGrilleTarifWsDto>" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMGrilleTarifWsDto">
+		<property name="numMin" type="java.lang.Integer"/>
+		<property name="numMax" type="java.lang.Integer"/>
+		<property name="destination" type="java.lang.String"/>
+		<property name="price" type="java.lang.Double"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.QuantityCreditsAddWsDto" >
+		<property name="quantityAdded" type="java.lang.Integer"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMCartWsDto">
+		<property name="sender" type="de.hybris.platform.commercefacades.user.data.AddressData"/>
+		<property name="receivers" type="com.laposte.eboutique.eboutiquecommercewebservices.user.data.AddressDataList"/>
+		<property name="coverImageB64" type="java.lang.String"/>
+		<property name="signatureImageB64" type="java.lang.String"/>
+		<property name="timbreImageB64" type="java.lang.String"/>
+		<property name="textBody" type="java.lang.String"/>
+		<property name="fontText" type="java.lang.String"/>
+		<property name="colorText" type="java.lang.String"/>
+		<property name="location" type="java.lang.String"/>
+		<property name="codeEnveloppeType" type="java.lang.String"/>
+		<property name="cardName" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.app.PUEMCartResponseWsDto">
+		<property name="idPanier" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.app.PUEMUsersPacksAvailableWsDto">
+		<property name="availableCredits" type="java.lang.Integer"/>
+		<property name="destination" type="java.lang.String"/>
+		<property name="codePack" type="java.lang.String"/>
+		<property name="dateValidite" type="java.util.Date"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.app.PUEMCreditsAvailableResponseWsDTO">
+		<property name="allCreditsAvailable" type="java.lang.Integer"/>
+		<property name="packsAvailable" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.app.PUEMUsersPacksAvailableWsDto>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.app.PUEMCodeOffreCreditWsDTO">
+		<property name="codeOffre" type="java.lang.String"/>
+		<property name="userId" type="java.lang.String"/>
+		<property name="orderId" type="java.lang.String"/>
+		<property name="activationDate" type="java.util.Date"/>
+		<property name="validityDate" type="java.util.Date"/>
+		<property name="codePack" type="java.lang.String"/>
+		<property name="namePack" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.GetCartResponseWsDto">
+		<property name="idPanier" type="java.lang.String"/>
+		<property name="mtamProduct" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMProductDto>" />
+		<property name="coutTotal" type="java.lang.Double"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.configurateur.PriceWsDTO">
+				<property name="amountTVA" type="java.lang.Double" />
+				<property name="amountTotalHT" type="java.lang.Double" />
+				<property name="amountTotalTTC" type="java.lang.Double" />
+				<property name="quantity" type="java.lang.Integer" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.configurateur.OfferWsDTO">
+				<property name="code" type="java.lang.String" />
+				<property name="name" type="java.lang.String" />
+				<property name="url" type="java.lang.String" />
+				<property name="price" type="de.hybris.platform.commercewebservicescommons.dto.configurateur.PriceWsDTO"></property>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.configurateur.OfferListRecapWsDTO">
+				<property name="fromIsoCode" type="java.lang.String" />
+				<property name="toIsoCode" type="java.lang.String" />
+				<property name="poids" type="java.lang.String" />
+				<property name="nombreDePages" type="java.lang.Integer" />
+				<property name="offers" type="java.util.Collection&lt;de.hybris.platform.commercewebservicescommons.dto.configurateur.OfferWsDTO>"></property>
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.McamImageWsDTO">
+		<property name="format" type="java.lang.String" />
+		<property name="url" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.MCAMCreationWsDTO">
+		<property name="code" type="java.lang.String" />
+		<property name="expediteur" type="de.hybris.platform.commercewebservicescommons.dto.user.AddressWsDTO"/>
+		<property name="lstDestinataire" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.user.AddressWsDTO>"/>
+		<property name="frontImages" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mcam.McamImageWsDTO>"/>
+		<property name="timbreImages" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mcam.McamImageWsDTO>"/>
+		<property name="signatureImages" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.mcam.McamImageWsDTO>"/>
+		<property name="frontUrl" type="java.lang.String"/>
+		<property name="timbreUrl" type="java.lang.String"/>
+		<property name="signatureUrl" type="java.lang.String"/>
+		<property name="textBody" type="java.lang.String"/>
+		<property name="cardName" type="java.lang.String"/>
+		<property name="color" type="java.lang.String"/>
+		<property name="font" type="java.lang.String"/>
+		<property name="location" type="java.lang.String"/>
+		<property name="enveloppeType" type="de.hybris.platform.commercewebservicescommons.dto.mcam.EnveloppeTypeWsDto"/>
+		<property name="productLogoUrl" type="java.lang.String"/>
+	</bean>
+
+	<bean class="com.laposte.eboutique.eboutiquecommercewebservices.dto.CoColissimoWsDTO">
+		<property name="pudofoid"  type="String" />
+		<property name="cename"  type="String" />
+		<property name="dypreparationtime" type="String" />
+		<property name="dyforwardingcharges" type="String" />
+		<property name="dyforwardingchargescmt" type="String" />
+		<property name="trclientnumber" type="String" />
+		<property name="trordernumber" type="String" />
+		<property name="orderid" type="String" />
+		<property name="numversion" type="String" />
+		<property name="cecivility" type="String" />
+		<property name="cefirstname" type="String" />
+		<property name="cecompanyname" type="String" />
+		<property name="ceadress1" type="String" />
+		<property name="ceadress2" type="String" />
+		<property name="ceadress3" type="String" />
+		<property name="ceadress4" type="String" />
+		<property name="cezipcode" type="String" />
+		<property name="cetown" type="String" />
+		<property name="ceentryphone" type="String" />
+		<property name="cedeliveryinformation" type="String" />
+		<property name="ceemail" type="String" />
+		<property name="cephonenumber" type="String" />
+		<property name="cedoorcode1" type="String" />
+		<property name="cedoorcode2" type="String" />
+		<property name="dyweight" type="String" />
+		<property name="trreturnurlko" type="String" />
+		<property name="trreturnurlok" type="String" />
+		<property name="trinter" type="String" />
+		<property name="cepays" type="String" />
+		<property name="celang" type="String" />
+		<!--<property name="key" type="String" />-->
+		<property name="signature" type="String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.order.DeliveryModeListWsDTO">
+		<property name="colissimoUrl" type="String" />
+		<property name="coColissimoData" type="com.laposte.eboutique.eboutiquecommercewebservices.dto.CoColissimoWsDTO" />
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.common.SimpleReponseWsDTO">
+	    <property name="success" type="boolean"/>
+	    <property name="errors" type="java.util.List&lt;de.hybris.platform.webservicescommons.dto.error.ErrorWsDTO>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mtam.MTAMCreationWsDTO" >
+		<property name="typeproduit" type="java.lang.String"/>
+		<property name="destination" type="java.lang.String"/>
+		<property name="poids" type="java.lang.String"/>
+		<property name="orientation" type="java.lang.String"/>
+		<property name="nomcreation" type="java.lang.String"/>
+		<property name="nature" type="java.lang.String"/>
+		<property name="prixpersonnalisation" type="java.lang.Double"/>
+		<property name="prixaffranchissement" type="java.lang.Double"/>
+		<property name="url" type="java.lang.String"/>
+		<property name="statusPhila" type="de.hybris.platform.commercewebservicescommons.dto.phila.StatusPhilaWsDTO"/>
+
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.mcam.PuemPackCreationWsDTO" >
+		<property name="codeCreation" type="java.lang.String"/>
+		<property name="codePack" type="java.lang.String"/>
+		<property name="isForGift" type="java.lang.String"/>
+		<property name="codeOffreCredit" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.webservicescommons.dto.error.ErrorWsDTO">
+		<property name="codeError" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.user.EboutiqueProCustomerWsDTO"
+		  extends="de.hybris.platform.commercewebservicescommons.dto.user.UserWsDTO">
+		<property name="customerId" type="String"/>
+		<property name="phone" type="String"/>
+		<property name="companyName" type="String"/>
+		<property name="companyTypeCode" type="String"/>
+		<property name="companyTypeName" type="String"/>
+		<property name="siret" type="String"/>
+		<property name="rna" type="String"/>
+		<property name="coclicoClientNumber" type="String"/>
+		<property name="functionCode" type="String"/>
+		<property name="tvaIntra" type="String"/>
+		<property name="postalCode" type="String"/>
+		<property name="serviceCode" type="String"/>
+		<property name="isCustomerProCertified" type="Boolean"/>
+		<property name="cppSolde" type="de.hybris.platform.commercewebservicescommons.dto.CPPSoldeWsDto"/>
+		<property name="certifiedEtatCode" type="String"/>
+		<property name="dateFinActivite" type="java.util.Date" />
+		<property name="dateFinActiviteCommerciale" type="java.util.Date" />
+		<property name="dateInactivation" type="java.util.Date" />
+		<property name="dateFermeture" type="java.util.Date" />
+	</bean>
+	
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.chorus.ChorusSiretWsDTO">
+	    <property name="chorus" type="boolean"/>
+	    <property name="services" type="java.util.List&lt;de.hybris.platform.eboutiquefacades.laposte.webservice.ChorusProServiceCodeWsDTO>"/>
+	    <property name="siret" type="String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.PasswordRequestDTO">
+		<property name="newPassword" type="java.lang.String"/>
+		<property name="oldPassword" type="java.lang.String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.ColissimoInitialDatasWsDTO">
+		<property name="departuresCountries" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.ColissimoCountryWsDTO>"/>
+		<property name="arrivalCountries" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.ColissimoCountryWsDTO>"/>
+		<property name="defaultDepartureCountry" type="String"/>
+		<property name="defaultArrivalCountry" type="String"/>
+		<property name="defaultPrice" type="de.hybris.platform.commercewebservicescommons.dto.ColisPriceRecapWsDTO"/>
+		<property name="colisFormats" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.ColisFormatWsDTO>"/>
+		<property name="contentsNatures" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.NatureEnvoiWsDTO>"/>
+		<property name="defaultCompensationByWeight" type="java.lang.Integer"/>
+		<property name="nationalInsurances" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.ColissimoInsuranceWsDTO>"/>
+		<property name="internationalInsurances" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.ColissimoInsuranceWsDTO>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.ColisFormatWsDTO">
+		<property name="type" type="com.laposte.eboutique.core.enums.TypeColisEnum"/>
+		<property name="label" type="java.lang.String"/>
+		<property name="LLHMin" type="java.lang.String"/>
+		<property name="LLHMax" type="java.lang.String"/>
+		<property name="heightMax" type="java.lang.String"/>
+		<property name="additionalCost" type="de.hybris.platform.commercewebservicescommons.dto.product.PriceWsDTO"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.NatureEnvoiWsDTO">
+		<property name="code" type="java.lang.String" />
+		<property name="nom" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.ColisPriceRecapWsDTO">
+		<property name="productCodeColis" type="java.lang.String" />
+		<property name="productCodeAssurance" type="java.lang.String" />
+		<property name="productCodeSurcout" type="java.lang.String" />
+		<property name="prixHT" type="java.lang.Double" />
+		<property name="assuranceTotal" type="java.lang.Double" />
+		<property name="assuranceLabel" type="java.lang.String" />
+		<property name="assuranceTypeRecommande" type="com.laposte.eboutique.core.enums.EnumRecommandeColis" />
+		<property name="surcout" type="java.lang.Double" />
+		<property name="avecSignature" type="java.lang.Boolean" />
+		<property name="totalHT" type="java.lang.Double" />
+		<property name="weight" type="java.lang.Double" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.ColissimoInsuranceWsDTO">
+		<property name="name" type="java.lang.String" />
+		<property name="price" type="java.lang.Double" />
+		<property name="min" type="java.lang.Integer" />
+		<property name="max" type="java.lang.Integer" />
+		<property name="step" type="java.lang.Integer" />
+		<property name="regime" type="com.laposte.eboutique.core.enums.RegimeColisEnum" />
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.ColissimoCountryWsDTO">
+		<property name="isocode" type="java.lang.String" />
+		<property name="name" type="java.lang.String" />
+		<property name="signMandatory" type="java.lang.Boolean" />
+		<property name="retour" type="java.lang.Integer" />
+		<property name="poidsmin" type="java.lang.Double" />
+		<property name="poidsmax" type="java.lang.Double" />
+		<property name="longueurmin" type="java.lang.Double" />
+		<property name="longueurmax" type="java.lang.Double" />
+		<property name="largeurmin" type="java.lang.Double" />
+		<property name="largeurmax" type="java.lang.Double" />
+		<property name="hauteurmin" type="java.lang.Double" />
+		<property name="hauteurmax" type="java.lang.Double" />
+		<property name="lLh" type="java.lang.Double" />
+		<property name="specificTerritory" type="java.lang.Boolean" />
+		<property name="activeForColissimo" type="java.lang.Boolean" />
+		<property name="onlyForColissimo" type="java.lang.Boolean" />
+		<property name="calculateurDelai" type="java.lang.Boolean" />
+		<property name="originCountry" type="de.hybris.platform.commercewebservicescommons.dto.ColissimoCountryWsDTO" />
+		<property name="postalCodeMandatoryForColissimo" type="java.lang.Boolean" />
+		<property name="isEligibleToGoalDeliveryAddress" type="java.lang.Boolean" />
+		<property name="eligibleRetour" type="java.lang.Boolean" />
+	</bean>
+	
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.PalierDto">
+		<property name="code" type="java.lang.String" />
+		<property name="modulo" type="java.lang.Boolean" />
+		<property name="min" type="java.lang.Double" />
+		<property name="max" type="java.lang.Double" />
+	</bean>
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.ColisEnregistresDto">
+		<property name="pk" type="java.lang.String" />
+		<property name="name" type="java.lang.String" />
+		<property name="palierPoids" type="de.hybris.platform.commercewebservicescommons.dto.PalierDto" />
+		<property name="typeColis"	type="java.lang.String" />
+		<property name="avecSignature" type="java.lang.Boolean" />
+		<property name="selectedPoids" type="java.lang.String" />
+		<!-- property for colis favoris -->
+		
+		<property name="customer" type="de.hybris.platform.commercefacades.user.data.CustomerData" />
+		<property name="emailPrevent" type="java.lang.String" />
+		<property name="emailDestinataire" type="java.lang.String" />
+		<property name="confirmedInsuredValue" type="java.lang.Double" />
+		<property name="insuredValue" type="java.lang.String" />
+		<property name="indemnitePlus" type="java.lang.Boolean" />
+		<property name="livraisonAvecSignature" type="java.lang.String" />
+		<property name="paysExp" type="java.lang.String" />
+		<property name="paysDest" type="java.lang.String" />
+		<property name="typeRetourColis" type="java.lang.String" />
+		<property name="avecSurcout" type="java.lang.String" />
+		<property name="formaliteDouaniere" type="de.hybris.platform.commercewebservicescommons.dto.order.FormaliteDouaniereWsDTO" />
+		<property name="adresseExp" type="de.hybris.platform.commercefacades.user.data.AddressData" />
+		<property name="adresseDest" type="de.hybris.platform.commercefacades.user.data.AddressData" />
+		<property name="creationtime" type="java.util.Date" />
+		<property name="totalPriceColis" type="java.lang.Double" />
+		<property name="regime" type="com.laposte.eboutique.core.enums.RegimeColisEnum" />
+		<property name="choixDepot" type="com.laposte.eboutique.core.enums.ChoixDepotEnum" />
+		<property name="suiviEmail" type="com.laposte.eboutique.core.enums.SuiviEmailEnum" />
+		<property name="oldIdColis" type="java.lang.String" />
+		<property name="isNewFavoris" type="java.lang.Boolean" />
+	</bean>
+	
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.ProductWishListDTO">
+		<description>POJO containing the wish list of the client.</description>
+		<property name="products"  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.colissimo.ColissimoColisWsDTO>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.CPPSoldeWsDto">
+		<property name="solde" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.HostedPaymentPageWsDTO">
+		<property name="paymentChoicesForm" type="java.lang.String" />
+		<property name="postUrl" type="java.lang.String" />
+		<property name="dataParam" type="java.lang.String" />
+		<property name="order" type="de.hybris.platform.commercewebservicescommons.dto.order.CartWsDTO" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.EbkHistoComptePrepayeListWsDTO">
+		<description>POJO containing the wish list of the EbkHistoComptePrepaye.</description>
+		<property name="totalOperations" type="java.lang.Integer" />
+		<property name="operations"  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.EbkHistoComptePrepayeWsDTO>"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.EbkHistoComptePrepayeWsDTO">
+		<property name="date" type="java.lang.String" />
+		<property name="amount" type="java.lang.String" />
+		<property name="typeTransaction" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.CalendarCallBackWsDTO">
+		<property name="day" type="java.lang.String" />
+		<property name="time" type="java.lang.String" />
+	</bean>
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.TokenOkapiWsDTO">
+		<property name="xsrfToken" type="java.lang.String" />
+		<property name="accessToken" type="java.lang.String" />
+		<property name="expires" type="java.util.Date" />
+	</bean>
+
+
+	<bean class="de.hybris.platform.commercewebservicescommons.dto.TuileQuickBuyMTELWsDTO">
+		<property name="origine" type="de.hybris.platform.commercefacades.user.data.CountryData" />
+		<property name="destination" type="de.hybris.platform.commercefacades.user.data.CountryData" />
+		<property name="typePlanche" type="com.laposte.eboutique.core.enums.MtelFormatSupport" />
+		<property name="natureEnvoi" type="com.laposte.eboutique.core.enums.EnumMtelProductType" />
+		<property name="weightRange" type="com.laposte.eboutique.core.enums.WeightRangeEnum" />
+	<!--	<property name="visuel" type="com.laposte.eboutique.core.model.VisuelMtelModel" />-->
+		<property name="descriptionSeo" type="java.lang.String" />
+	</bean>
+
+    <bean class="de.hybris.platform.commercewebservicescommons.dto.TuileQuickBuyMTELProductsWsDTO">
+        <description>POJO containing the list of the TuileQuickBuyMTEL</description>
+        <property name="tuiles"  type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.TuileQuickBuyMTELWsDTO>"/>
+    </bean>
+
+
+    <bean class="de.hybris.platform.commercewebservicescommons.dto.ReponseWebCallBackWsDTO" extends="de.hybris.platform.webservicescommons.dto.error.ErrorListWsDTO">
+	    <property name="calendarDay" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.CalendarCallBackWsDTO>" />
+	    <property name="closedDay" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.CalendarCallBackWsDTO>" />
+	    <property name="specialDay" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.CalendarCallBackWsDTO>" />
+	</bean>
+
+
+</beans>
+
