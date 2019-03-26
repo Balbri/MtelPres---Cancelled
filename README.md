@@ -37,6 +37,15 @@ Une vision simplifiée d'une architecture Hybris:
 ![Architecture Hybris](https://github.com/Balbri/MtelPres/blob/master/img/Crossview-Hybris%20System%20Context.png)
 
 
+### Lexique:
+
+* POS/mPOS : (mobile)Point of Sale => La boutique.
+* ESB : Entreprise Service Bus => Permet la communication entre les différents services. Il assure la partie dynamique d'une base de données.
+* ETL Server: Extract Transform Load Server => Serveur assurant la gestion non dynamique d'une base de données.
+* Payment Gateway => Plateforme de Paiement.
+
+### Fonctionnement:
+
 Pour la partie Back-Office, la boutique la Poste fonctionne sur Hybris, une plateforme/base de données orientée e-commerce. L'objectif est de développer dans un premier temps une page d'administration du module Quickbuy pour permettre aux webmasters de créer ou modifier des produits mis en vente dans le service.
 
 Pour cela, on utilisera des fichiers ImpEx ainsi qu'un court code HTML pour afficher l'interface d'administration.
