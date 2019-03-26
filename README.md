@@ -84,4 +84,11 @@ La partie Application du projet est développée sous Android Studio en Java, et
 
 
 
+# Annexe:
 
+## Logiciels utilisés:
+
+* StarUML pour la création des diagrammes
+* Oracle Virtual Box pour faire tourner la plateforme Hybris en local
+* JetBrains IntelliJ pour le développement du back-office
+* Android Studio pour le développement de l'application mobile
