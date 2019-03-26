@@ -29,7 +29,8 @@ Voici le Diagramme des Use Case du module QuickBuy.
 ![Usecase](https://github.com/Balbri/MtelPres/blob/master/img/QuickBuy_Use_Case.png)
 
 
-
+Voilà le Diagramme de Séquence du module QuickBuy.
+![Sequence](https://github.com/Balbri/MtelPres/blob/master/img/QuickBuyMtelSequence.png)
 
 ## Environnement de travail: Hybris.
 
