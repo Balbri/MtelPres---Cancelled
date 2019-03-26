@@ -55,7 +55,7 @@ Désormais, le webmaster peut créer ou modifier les services via l'interface Hy
 La première étape est d'afficher les trois produits en format json. Pour celà, il faut écrire un contrôleur qui va effectuer un mapping des trois objets présents dans la base et permettre leur récupération au format JSON.
 
 Pour cela, d'un côté la construction des objets (initialement au format MODEL) se fera via des fichiers XML. 
-
+![Objet tuile en XML](https://github.com/Balbri/MtelPres/blob/master/img/)
 
 Le contrôleur, pour sa part, est en JAVA. Sa fonction est de récupérer les données, qui transitent par les methodes de mapping que l'on place dans une zone intermédiaire nommée "Façade".
 
@@ -65,6 +65,10 @@ Façade accueillant les méthodes de mapping
 
 Controller assurant l'unique récupération des données, via la façade
 ![Controller](https://github.com/Balbri/MtelPres/blob/master/img/QbControllerJava.PNG)
+
+## Environnement de travail: Android (Langage JAVA/Kotlin):
+
+La partie Application du projet est développée sous Android Studio en Java, et connaîtra une itération IOS en Switft (hors projet). A l'heure actuelle, le travail sur le front n'est pas commencé.
 
 
 
