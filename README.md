@@ -24,7 +24,7 @@ Le module est en cours de déploiement pour la version [Site Desktop](https://la
 
 Voici le Diagramme des Use Case du module QuickBuy.
 
-[Usecase](https://github.com/Balbri/MtelPres/blob/master/img/QuickBuy_Use_Case.png)
+![Usecase](https://github.com/Balbri/MtelPres/blob/master/img/QuickBuy_Use_Case.png)
 
 
 
