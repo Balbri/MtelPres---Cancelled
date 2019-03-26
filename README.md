@@ -1,5 +1,7 @@
 # Projet Chef-d'Oeuvre Simplon La Poste 3.
 
+Auteur: Nicolas Filine
+
 
 ## Contexte de développement
 
