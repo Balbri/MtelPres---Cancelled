@@ -2,6 +2,8 @@
 
 Auteur: Nicolas Filine
 
+[Lien Trello](https://trello.com/invite/b/wBczrWbG/48607a4471c2fa839f4dd2ce66551b88/mtel-quickbuy)
+
 
 ## Contexte de développement
 
