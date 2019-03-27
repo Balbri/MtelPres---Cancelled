@@ -1,0 +1,48 @@
+$contentCatalog=eboutiqueProContentCatalog
+$productCatalog=eboutiqueProProductCatalog
+$storeName=eboutiquePro
+$version=Staged
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=$version])[default=$contentCatalog:$version]
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default=$version])[unique=true,default=$productCatalog:$version]
+$jarResource=jar:com.laposte.eboutique.core.setup.CoreSystemSetup&/eboutiquecore/import/cockpits/cmscockpit
+$lang=fr
+$mtelProductCatalog = visuelMtelProCatalog
+$catalogVersion = catalogversion(catalog(id[default = $mtelProductCatalog]), version[default = $version])[unique = true, default = $mtelProductCatalog:$version]
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+
+# A page template that allows the webmaster to access the module's products page.
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;restrictedPageTypes(code);active[default=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;AppMobile_mtelQuickbuy;AppMobile_mtelQuickbuy;ContentPage;;$jarResource/structure-view/structure_contentPage_appMobile_quickbuy.vm
+
+# A content slots that will contain the products "tuiles"
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='AppMobile_CrossSelling'];validComponentTypes(code)
+;Section_TUILES;;QuickBuyMTELComponent
+
+ # Declaration of tuile's attributes, generating the sellable object.
+INSERT_UPDATE TuileQuickBuyMTELComponent;uid[unique = true];name;origine(isocode);destination(isocode);typePlanche(code,itemtype(code));natureEnvoi(code,itemtype(code));weightRange(code,itemtype(code));visuel(code,$catalogVersion);$contentCV[unique = true];&componentRef
+                                        ;app-tuile-mtel-1 ;app-tuile-mtel-1 ;fr ;fr ;L12A:MtelFormatSupport;LETTRE_VERTE:EnumMtelProductType;P0_20g:WeightRangeEnum;LaPosteNB;;app-tuile-mtel-1
+                                        ;app-tuile-mtel-2 ;app-tuile-mtel-2 ;fr ;fr ;L24A:MtelFormatSupport;LETTRE_PRIORITAIRE:EnumMtelProductType;P20_50g:WeightRangeEnum;DeveloppementDurable;;app-tuile-mtel-2
+                                        ;app-tuile-mtel-3 ;app-tuile-mtel-3 ;fr ;fr ;L18A:MtelFormatSupport;LETTRE_VERTE:EnumMtelProductType;P1000_2000g:WeightRangeEnum;Voyage;;app-tuile-mtel-3
+
+# Declaration of unique IDs for each product: "app-tuile-mtel-1"
+INSERT_UPDATE QuickBuyMTELComponent;uid[unique = true];tuilesQuickBuy(&componentRef);$contentCV[unique = true];&componentRef
+                                   ;ApiQuickBuyMTELComponent;app-tuile-mtel-1,app-tuile-mtel-2,app-tuile-mtel-3;;ApiQuickBuyMTELComponent
+
+# Declaration of unique IDs for each product slot.
+INSERT_UPDATE ContentSlot;uid[unique = true];name;active;cmsComponents(&componentRef);$contentCV[unique = true]
+                         ;apiQuickBuySlot ;Quick Buy MTEL Slot ;true ;ApiQuickBuyMTELComponent;
+
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;label;masterTemplate(uid,$contentCV)[default='AppMobile_mtelQuickbuy'];defaultPage;approvalStatus(code)[default='approved']
+                         ;;AppMobile_mtelQuickbuyPage;AppMobile_mtelQuickbuy;AppMobile_mtelQuickbuy;;true
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'AppMobile_mtelQuickbuyPage']; contentSlot(uid, $contentCV)[unique = true]
+                                ;;Section_TUILES;Section_TUILES ;;apiQuickBuySlot ;
+
+
+
+
+
