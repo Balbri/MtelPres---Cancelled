@@ -68,9 +68,11 @@ Désormais, le webmaster peut créer ou modifier les services via l'interface Hy
 
 La première étape est d'afficher les trois produits en format json. Pour celà, il faut écrire un contrôleur qui va effectuer un mapping des trois objets présents dans la base et permettre leur récupération au format JSON.
 
-Pour cela, d'un côté la construction des objets (initialement au format MODEL) se fera via des fichiers XML: Une déclaration de Façade et une déclaration d'Entité. 
-![Déclaration de façade](https://github.com/Balbri/MtelPres/blob/master/img/TuileQuickBuyBean.PNG)
-![Entité](https://github.com/Balbri/MtelPres/blob/master/img/eboutiquecommercewebservices-beans.PNG)
+Pour cela, d'un côté la construction des objets (initialement au format MODEL) se fera via des fichiers XML: Un bean, dédié à l'encapsulation des tuiles et leurs attributs (on indique le nom du bean et la classe concernée par l'encapsulation).
+![Bean](https://github.com/Balbri/MtelPres/blob/master/img/TuileQuickBuyBean.PNG)
+
+Puis un DTO (Data Transfert Object, ou Objet de Transfert de données, qui va assurer le mapping des informations récupérées par le controller.
+![Classe](https://github.com/Balbri/MtelPres/blob/master/img/eboutiquecommercewebservices-beans.PNG)
 
 Le contrôleur, pour sa part, est en JAVA. Sa fonction est de récupérer les données, qui transitent par les methodes de mapping que l'on place dans une zone intermédiaire nommée "Façade".
 
