@@ -95,3 +95,4 @@ La partie Application du projet est développée sous Android Studio en Java, et
 * Oracle Virtual Box pour faire tourner la plateforme Hybris en local
 * JetBrains IntelliJ pour le développement du back-office
 * Android Studio pour le développement de l'application mobile
+* Postman pour tester les webservices une fois leur exposition terminée
